@@ -19,6 +19,6 @@ public class SeedController {
     @PostMapping("/users")
     public ResponseEntity<List<JPHUserResponse>> seedUsers(){
         List<JPHUserResponse> userResponses=seedService.seedUsers();
-        return new ResponseEntity<List<JPHUserResponse>>(userResponses,HttpStatus.NO_CONTENT);
+        return new ResponseEntity<List<JPHUserResponse>>(userResponses,HttpStatus.OK);
     }
 }
