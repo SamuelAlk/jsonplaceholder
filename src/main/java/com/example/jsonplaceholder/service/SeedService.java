@@ -11,8 +11,10 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SeedService {
     private final JsonplaceholderApi jsonplaceholderApi;
-
+    private final UserService userService;
     public List<JPHUserResponse> seedUsers(){
-        return jsonplaceholderApi.getusers();
+        List<JPHUserResponse> list = jsonplaceholderApi.getusers();
+        userService.saveUserList(list);
+        return list;
     }
 }
